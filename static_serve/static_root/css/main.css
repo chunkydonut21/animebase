@@ -1,0 +1,104 @@
+a:hover {
+    text-decoration: none;
+}
+
+.img-style {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 184px;
+    height: 256px;
+    border: 1px solid lightgrey;
+}
+
+.btn-style {
+
+    box-shadow: 1px 1px 0.1px #ccc;
+}
+
+.dark {
+    background-color: #0c0c0c !important;
+}
+
+footer.page-footer {
+    bottom: 0;
+    color: #fff;
+}
+
+.font-small {
+    font-size: .9rem;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+li > a {
+    color: gold;
+}
+
+li > a:hover {
+    color: darkgoldenrod;
+}
+
+.gold_link {
+    color: gold;
+}
+
+.gold_link:hover {
+    color: darkgoldenrod;
+}
+
+body {
+    background-color: #171717;
+    color: #fff;
+}
+
+.item-link {
+    text-decoration: none;
+    color: gold;
+}
+
+.item-link:hover {
+    color: darkgoldenrod;
+}
+
+.badge-link {
+    text-decoration: none;
+    background-color: darkgoldenrod;
+    color: antiquewhite;
+}
+
+.badge-link:hover {
+    color: white;
+}
+
+.badge-style {
+    font-size: 14px;
+    margin: 4px;
+    padding: 8px;
+    border-radius: 25px;
+
+}
+
+nav .navbar-nav li a {
+    color: gold !important;
+}
+
+nav .navbar-nav li a:hover {
+    color: darkgoldenrod !important;
+}
+
+nav .navbar-brand a {
+    color: gold !important;
+}
+
+nav .navbar-brand a:hover {
+    color: darkgoldenrod !important;
+}
+
+/*.navbar-nav > li > .dropdown-menu { background-color: #171717; }*/
+
+/*.navbar-nav > li > .dropdown-menu:hover { background-color: #171717; }*/
+
+.dropdown-menu > a:hover {
+    background-color: #1b1b1b !important;
+}

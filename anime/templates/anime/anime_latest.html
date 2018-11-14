@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}AnimeBase - Watch anime online in high quality{% endblock %}
+
+{% block extra_meta_head_tags %}
+    <meta name="description"
+          content="AnimeBase Official Website - Watch anime online in high quality. Free download high quality anime. Various formats from 240p to 720p HD (or even 1080p). HTML5 available for mobile devices"/>
+    <meta name="keywords"
+          content="AnimeBase, Watch high quality anime online, anime english sub, anime english dub, watch anime online, anime online, anime html5, anime streaming, anime mobile"/>
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col-md-9">
+
+            {% if directory %}
+
+                <div class="row">
+                    <div class="col mt-2 pl-0">
+                        <div class="alert alert-warning" role="alert"
+                             style="background-color: darkgoldenrod; color: #ffffff;">
+                            TOP {{ directory }} ANIME
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                {% for object in object_list %}
+                    <div class="col-md-4 col-sm-4 col-lg-3 col-xs-2 mt-2 pl-0">
+                        <div style="width: 12rem; background-color: #171717">
+                            <a href="{{ object.get_absolute_url }}">
+                                <img class="img-style" src="{{ object.image.url }}" alt="{{ object.title }}">
+                            </a>
+                            <p class="card-title p-2 mt-2" style="font-size: medium; text-align: center;">
+                                <a href="{{ object.get_absolute_url }}" class="item-link">{{ object.title }}</a>
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-md-6 mt-5 ml-auto mr-auto">
+                    {% include "anime/snippets/paginator.html" with page_obj=page_obj %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mt-2">
+            {% include 'anime/snippets/genre.html' with genre_list=genre_list %}
+
+        </div>
+    </div>
+
+{% endblock %}

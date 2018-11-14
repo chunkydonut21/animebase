@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}AnimeBase - Watch anime online in high quality{% endblock %}
+{% block extra_meta_head_tags %}
+    <meta name="description" content="AnimeBase Official Website - Watch anime online in high quality. Free download high quality anime. Various formats from 240p to 720p HD (or even 1080p). HTML5 available for mobile devices"/>
+    <meta name="keywords" content="AnimeBase, Watch high quality anime online, anime english sub, anime english dub, watch anime online, anime online, anime html5, anime streaming, anime mobile"/>
+{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>Contact Us</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Send" class="btn btn-outline-warning btn-block btn-lg">
+    </form>
+{% endblock %}

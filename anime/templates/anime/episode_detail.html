@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ object.name }} Anime | Watch {{ object.name }} anime online in high quality{% endblock %}
+
+{% block extra_meta_head_tags %}
+    <meta name="description" content="Watch online and download {{ object.title }} anime in high quality. Various formats from 240p to 720p HD (or even 1080p)."/>
+    <meta name="keywords" content="{{ object.name }}, {{ object.name }} anime, watch {{ object.name }} anime, {{ object.name }} watch online, watch {{ object.name }}, {{ object.name }} anime watch, {{ object.name }} anime online, watch {{ object.name }} online, {{ object.name }} watch, {{ object.name }} html5, {{ object.name }} english sub, download {{ object.name }} anime, watch {{ object.name }} high quality, {{ object.name }} streaming, {{ object.name }} mobile episode"/>
+
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-9 mt-3">
+            <div class="row">
+                <div class="col">
+                    <h1 class="display-4 pb-3" style="text-align: center;">{{ object.name }}</h1>
+                    <p class="lead pb-2" style="text-align: center;">{{ object.title }}</p>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="{{ object.url }}" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 mb-5">
+                <div class="col">
+                    <div class="card" style="background-color: #171717; border: 1px solid grey;">
+                        <div class="card-header" style="background-color: darkgoldenrod; color: #fff;">
+                            <p class="h4" style="text-align: center; text-transform: uppercase">Episode List</p>
+                        </div>
+                        <div class="card-body" style="background-color: #171717;">
+                            <ul class="list-group list-group-flush">
+                                {% for episode in object.anime.episode_set.all %}
+                                    <li class="list-group-item" style="background-color: #171717;">
+                                        <a href="{{ episode.get_absolute_url }}">{{ episode.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+
+{% endblock %}

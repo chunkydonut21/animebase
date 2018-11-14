@@ -1,0 +1,50 @@
+{# {% url 'anime:hot' as hot_url %}
+{% url 'anime:list' as list_url %}
+{% url 'anime:latest' as latest_url %}
+{% url 'anime:directory' cat='Romance' as directory_url %}
+
+<nav class="navbar navbar-expand-lg navbar-dark mb-3" style="background-color: #0c0c0c;">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'list' %}">ANIMEBASE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if request.path == list_url %} active {% endif %}">
+                    <a class="item-link nav-link" href="{% url 'list' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item {% if request.path == latest_url %} active {% endif %}">
+                    <a class="nav-link" href="{% url 'anime:latest' %}">Latest</a>
+                </li>
+                <li class="nav-item {% if request.path == hot_url %} active {% endif %}">
+                    <a class="nav-link" href="{% url 'anime:hot' %}">Hot</a>
+                </li>
+                <li class="nav-item {% if request.path == directory_url %} active {% endif %}">
+                    <a class="nav-link" href="{% url 'anime:directory' cat='Romance' %}">Directory</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #212121;">
+                        {% if request.user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                            <a class="dropdown-item" href="{% url 'login' %}">Register</a>
+                        {% endif %}
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="get">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                       aria-label="Search" id="id-input" name="q">
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav> #}

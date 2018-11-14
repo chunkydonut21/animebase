@@ -1,0 +1,12 @@
+<div class="card" style="background-color: #171717; border: 1px solid lightgrey">
+    <div class="card-header" style="background-color: darkgoldenrod">
+        Browse Anime by Category
+    </div>
+    <div class="card-body">
+        {% for genre in genre_list %}
+            <a href="{{ genre.get_absolute_url }}">
+                <span class="badge badge-style badge-link">{{ genre.name }}</span>
+            </a>
+        {% endfor %}
+    </div>
+</div>
